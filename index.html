@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asian Women Summit 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --ink:#1E1720; --ground:#F7F3F1; --surface:#FFFFFF; --surface-2:#F1E9E4;
+  --muted:#6E6470; --line:#E6DBD5;
+  --accent:#B8305B; --accent-strong:#8F224A; --deep:#3A2748; --gold:#B78B3C;
+  --on-accent:#FFF6F9; --shadow:24px 24px 60px rgba(58,39,72,.10);
+  --font-display:"Fraunces","Georgia",serif;
+  --font-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#F2EBEE; --ground:#161119; --surface:#201826; --surface-2:#291F31;
+    --muted:#AA9DB1; --line:#352A3F;
+    --accent:#EA6188; --accent-strong:#F3A6BE; --deep:#C9A7D4; --gold:#D6B369;
+    --on-accent:#1A0E13; --shadow:24px 24px 60px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#F2EBEE; --ground:#161119; --surface:#201826; --surface-2:#291F31;
+  --muted:#AA9DB1; --line:#352A3F;
+  --accent:#EA6188; --accent-strong:#F3A6BE; --deep:#C9A7D4; --gold:#D6B369;
+  --on-accent:#1A0E13; --shadow:24px 24px 60px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--font-body); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+a{color:inherit}
+h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:balance; line-height:1.05}
+.wrap{width:min(1140px,92vw); margin:0 auto}
+.eyebrow{font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--accent-strong)}
+.btn{display:inline-flex; align-items:center; gap:.5em; padding:.72em 1.35em; border-radius:999px;
+  font-family:var(--font-body); font-weight:600; font-size:.96rem; text-decoration:none; cursor:pointer;
+  border:1px solid transparent; transition:transform .18s ease, box-shadow .18s ease, background .18s ease}
+.btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.btn-accent{background:var(--accent); color:var(--on-accent)}
+.btn-accent:hover{transform:translateY(-2px); box-shadow:0 10px 24px -8px var(--accent)}
+.btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent); color:var(--accent-strong)}
+
+/* NAV */
+.nav{position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:1.5rem;
+  width:min(1140px,92vw); margin:0 auto; padding:1rem 0;
+  background:color-mix(in srgb, var(--ground) 86%, transparent); backdrop-filter:blur(10px)}
+.nav::after{content:""; position:absolute; left:-4vw; right:-4vw; bottom:0; height:1px; background:var(--line)}
+.brand{font-family:var(--font-display); font-weight:900; font-size:1.15rem; text-decoration:none; letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+.nav-links{display:flex; gap:1.4rem; margin-left:auto; font-size:.95rem; font-weight:500}
+.nav-links a{text-decoration:none; color:var(--muted); transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-actions{display:flex; align-items:center; gap:.7rem}
+.theme-toggle{width:38px; height:38px; border-radius:999px; border:1px solid var(--line); background:var(--surface);
+  color:var(--ink); cursor:pointer; display:grid; place-items:center; font-size:1rem}
+.theme-toggle:hover{border-color:var(--accent)}
+@media (max-width:760px){.nav-links{display:none}}
+
+/* HERO */
+.hero{padding:5.5rem 0 4rem; position:relative; overflow:hidden}
+.hero-grid{display:grid; grid-template-columns:1.25fr .75fr; gap:2rem; align-items:end}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.9rem,7vw,5.6rem); letter-spacing:-.02em; margin:.5rem 0 0}
+.hero h1 em{font-style:italic; font-weight:500; color:var(--accent)}
+.hero-lead{margin:1.5rem 0 0; max-width:34ch; font-size:1.12rem; color:var(--muted)}
+.hero-cta{display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2rem}
+.hero-meta{display:flex; flex-direction:column; gap:1rem; padding-bottom:.5rem}
+.meta-card{border:1px solid var(--line); background:var(--surface); border-radius:16px; padding:1.1rem 1.25rem}
+.meta-card .k{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-strong); font-weight:700}
+.meta-card .v{margin-top:.25rem; font-family:var(--font-display); font-size:1.35rem; font-weight:600}
+.meta-card .s{font-size:.9rem; color:var(--muted)}
+.hero-orn{position:absolute; right:-140px; top:-80px; width:420px; height:420px; border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, color-mix(in srgb,var(--accent) 26%, transparent), transparent 62%);
+  filter:blur(6px); pointer-events:none; z-index:-1}
+
+/* SECTION */
+.section{padding:5rem 0}
+.section-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem}
+.section-head h2{font-size:clamp(2rem,4vw,3rem); letter-spacing:-.015em}
+.section-head p{color:var(--muted); max-width:42ch; margin:.4rem 0 0}
+.count-pill{font-family:var(--font-body); font-size:.8rem; font-weight:700; letter-spacing:.04em;
+  color:var(--accent-strong); background:var(--surface-2); border:1px solid var(--line); padding:.35em .8em; border-radius:999px}
+
+/* AGENDA */
+.agenda{list-style:none; margin:0; padding:0; position:relative}
+.agenda::before{content:""; position:absolute; left:86px; top:8px; bottom:8px; width:2px; background:var(--line)}
+@media (max-width:620px){.agenda::before{left:64px}}
+.ag-item{display:grid; grid-template-columns:74px 24px 1fr; gap:1rem; padding:.85rem 0; align-items:start}
+@media (max-width:620px){.ag-item{grid-template-columns:52px 24px 1fr}}
+.ag-time{text-align:right; font-variant-numeric:tabular-nums; line-height:1.15}
+.ag-start{display:block; font-family:var(--font-display); font-weight:600; font-size:1.05rem}
+.ag-end{display:block; font-size:.78rem; color:var(--muted)}
+.ag-dot{width:14px; height:14px; margin-top:5px; border-radius:50%; background:var(--surface);
+  border:2.5px solid var(--accent); justify-self:center}
+.ag-title{font-family:var(--font-display); font-size:1.25rem; font-weight:600}
+.ag-desc{margin:.15rem 0 0; color:var(--muted); font-size:.96rem}
+
+/* SPEAKERS */
+.spk-note{color:var(--muted); font-size:.92rem; margin:-1.4rem 0 2rem}
+.spk-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.1rem}
+.spk{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:1.4rem;
+  display:flex; flex-direction:column; gap:1rem; transition:transform .2s ease, box-shadow .2s ease}
+.spk:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+.spk-avatar{position:relative; width:64px; height:64px; border-radius:16px; display:grid; place-items:center;
+  font-family:var(--font-display); font-weight:900; font-size:1.4rem; color:var(--on-accent)}
+.spk-avatar[data-i="0"]{background:var(--accent)}
+.spk-avatar[data-i="1"]{background:var(--deep); color:#fff}
+.spk-avatar[data-i="2"]{background:var(--gold); color:#241a08}
+.spk-avatar[data-i="3"]{background:var(--accent-strong)}
+.spk-avatar[data-i="4"]{background:#5A6B7A; color:#fff}
+.spk-badge{position:absolute; bottom:-8px; right:-8px; font-family:var(--font-body); font-size:.6rem; font-weight:800;
+  letter-spacing:.08em; text-transform:uppercase; background:var(--ink); color:var(--ground);
+  padding:.2em .5em; border-radius:999px; border:2px solid var(--surface)}
+.spk-name{font-size:1.2rem; font-weight:600}
+.spk-title{margin:.3rem 0 0; font-size:.9rem; color:var(--ink)}
+.spk-title--tbd{color:var(--muted); font-style:italic}
+.spk-co{margin:.35rem 0 0; font-size:.82rem; font-weight:700; letter-spacing:.03em; color:var(--accent-strong)}
+
+/* DIRECTORY */
+.dir-panel{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:1.5rem; box-shadow:var(--shadow)}
+.dir-controls{display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:.8rem}
+@media (max-width:720px){.dir-controls{grid-template-columns:1fr}}
+.field{position:relative; display:flex; flex-direction:column; gap:.35rem}
+.field label{font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--muted)}
+.field input, .field select{width:100%; padding:.7rem .9rem; border-radius:12px; border:1px solid var(--line);
+  background:var(--ground); color:var(--ink); font-family:var(--font-body); font-size:.98rem; appearance:none}
+.field input:focus, .field select:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 18px) center,calc(100% - 13px) center; background-size:5px 5px,5px 5px; background-repeat:no-repeat}
+.dir-status{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin:1.4rem 0 1rem}
+.dir-status .n{font-family:var(--font-display); font-weight:600; font-size:1.05rem}
+.clear-btn{background:none; border:none; color:var(--accent-strong); font-family:var(--font-body); font-weight:600;
+  font-size:.9rem; cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+.clear-btn[hidden]{display:none}
+.dir-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:.8rem}
+.att{background:var(--ground); border:1px solid var(--line); border-radius:14px; padding:1rem 1.1rem;
+  display:flex; gap:.85rem; align-items:center}
+.att-mono{flex:0 0 auto; width:40px; height:40px; border-radius:11px; background:var(--surface-2);
+  display:grid; place-items:center; font-family:var(--font-display); font-weight:700; font-size:.95rem; color:var(--deep)}
+.att-info{min-width:0}
+.att-name{font-weight:600; font-size:1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.att-meta{font-size:.85rem; color:var(--muted); margin-top:.1rem}
+.att-meta b{color:var(--accent-strong); font-weight:700}
+.dir-empty{text-align:center; padding:2.5rem 1rem; color:var(--muted)}
+.dir-empty[hidden]{display:none}
+mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; border-radius:3px; padding:0 .1em}
+
+/* SPONSORS */
+.sponsors-inner{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:2.2rem}
+.sp-tier{margin-bottom:2rem}
+.sp-tier:last-child{margin-bottom:0}
+.sp-tier-label{font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--accent-strong); margin:0 0 .9rem}
+.sp-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.9rem}
+.sp-slot{height:84px; border:1.5px dashed var(--line); border-radius:14px; display:grid; place-items:center;
+  color:var(--muted); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase}
+.sp-cta{margin-top:2rem; text-align:center; color:var(--muted); font-size:.95rem}
+.sp-cta a{color:var(--accent-strong); font-weight:600}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--line); padding:3.5rem 0 4rem; margin-top:2rem}
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:2rem; align-items:start}
+@media (max-width:680px){.footer-grid{grid-template-columns:1fr}}
+.footer h3{font-family:var(--font-display); font-size:1.8rem; font-weight:600}
+.footer p{color:var(--muted); margin:.5rem 0 0; max-width:36ch}
+.footer-meta{font-size:.95rem}
+.footer-meta div{margin-bottom:.6rem}
+.footer-meta .k{font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-strong); font-weight:700; display:block}
+.colophon{margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:.85rem; color:var(--muted);
+  display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+
+/* reveal */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none}}
+</style>
+</head>
+<body>
+<header class="nav" id="top">
+  <a class="brand" href="#top">Asian&nbsp;Women&nbsp;Summit <span>&rsquo;26</span></a>
+  <nav class="nav-links">
+    <a href="#agenda">Agenda</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#directory">Directory</a>
+    <a href="#sponsors">Sponsors</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">&#9789;</button>
+    <a class="btn btn-accent" href="https://luma.com/cvea199x" target="_blank" rel="noopener">Register</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero reveal">
+    <div class="hero-orn" aria-hidden="true"></div>
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Rise2gether presents</p>
+        <h1>Asian Women <em>Summit</em> 2026</h1>
+        <p class="hero-lead">A one-day gathering of ambitious, curious, purpose-driven Asian women exploring the most transformative opportunity of our generation &mdash; artificial intelligence.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="https://luma.com/cvea199x" target="_blank" rel="noopener">Register on Luma</a>
+          <a class="btn btn-ghost" href="#directory">Explore the directory</a>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-card">
+          <div class="k">When</div>
+          <div class="v">Sat, Sep 12, 2026</div>
+          <div class="s">9:00 AM &ndash; 5:00 PM PT</div>
+        </div>
+        <div class="meta-card">
+          <div class="k">Where</div>
+          <div class="v">Parkview Event Space</div>
+          <div class="s">200 8th Ave N, Seattle, WA</div>
+        </div>
+        <div class="meta-card">
+          <div class="k">Who</div>
+          <div class="v">200+ attendees</div>
+          <div class="s">Leaders across tech, startups &amp; VC</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="agenda">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">The day</p>
+        <h2>Agenda</h2>
+      </div>
+      <p>A full day, from first coffee to closing reflections. Session details firming up as we approach September.</p>
+    </div>
+    <ol class="agenda reveal">
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">9:00</span><span class="ag-end">9:20</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Registration &amp; Networking</h3>
+            <p class="ag-desc">Doors open. Coffee, name tags, and first hellos.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">9:20</span><span class="ag-end">9:35</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Opening Remarks</h3>
+            <p class="ag-desc">Welcome and the vision for the day.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">9:35</span><span class="ag-end">9:45</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Sponsor Welcome</h3>
+            <p class="ag-desc">A word from the partners making this possible.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">9:45</span><span class="ag-end">10:00</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Keynote</h3>
+            <p class="ag-desc">The headline talk to set the tone.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">10:00</span><span class="ag-end">10:45</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Fireside Chat</h3>
+            <p class="ag-desc">An intimate conversation with a leader in AI.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">10:45</span><span class="ag-end">12:00</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Panel Discussion</h3>
+            <p class="ag-desc">Multiple voices on navigating AI, tech, and leadership.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">12:00</span><span class="ag-end">1:30</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Lunch &amp; Networking</h3>
+            <p class="ag-desc">Break bread and build your Seattle network.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">1:30</span><span class="ag-end">2:30</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Interactive Workshop</h3>
+            <p class="ag-desc">Hands-on with the tools shaping the field.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">2:30</span><span class="ag-end">4:00</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Roundtables &amp; AI Sessions</h3>
+            <p class="ag-desc">Small-group deep dives on the topics that matter to you.</p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">4:00</span><span class="ag-end">5:00</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Closing Remarks</h3>
+            <p class="ag-desc">Reflections, thank-yous, and where we go next.</p>
+          </div>
+        </li>
+    </ol>
+  </section>
+
+  <section class="section" id="speakers">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">The voices</p>
+        <h2>Speakers</h2>
+      </div>
+      <p>Leaders in AI, engineering, product, and venture &mdash; sharing what they see coming.</p>
+    </div>
+    <p class="spk-note reveal">Full bios, headshots, and session assignments are on the way. Here&rsquo;s the confirmed lineup so far.</p>
+    <div class="spk-grid reveal">
+        <article class="spk" style="--d:0ms">
+          <div class="spk-avatar" data-i="0">KX<span class="spk-badge">Host</span></div>
+          <div class="spk-body">
+            <h3 class="spk-name">Kexin Xu</h3>
+            <p class="spk-title">Founder</p>
+            <p class="spk-co">Rise2gether</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:40ms">
+          <div class="spk-avatar" data-i="1">EH</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Elaine Lin Hering</h3>
+            <p class="spk-title">Founder</p>
+            <p class="spk-co">Not the Only</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:80ms">
+          <div class="spk-avatar" data-i="2">FF</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Fiona Fung</h3>
+            <p class="spk-title">Member of Technical Staff</p>
+            <p class="spk-co">Anthropic</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:120ms">
+          <div class="spk-avatar" data-i="3">TC</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Tanya Chen</h3>
+            <p class="spk-title">Member of Technical Staff</p>
+            <p class="spk-co">OpenAI</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:160ms">
+          <div class="spk-avatar" data-i="4">TC</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Teresa Chen</h3>
+            <p class="spk-title">Sr. Director, Product Management</p>
+            <p class="spk-co">Google</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:200ms">
+          <div class="spk-avatar" data-i="0">MW</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Mei Wilson</h3>
+            <p class="spk-title">Director of Engineering</p>
+            <p class="spk-co">Meta</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:240ms">
+          <div class="spk-avatar" data-i="1">CF</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Claire Fang</h3>
+            <p class="spk-title">Chief Product & Technology Officer</p>
+            <p class="spk-co">Fullstory</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:280ms">
+          <div class="spk-avatar" data-i="2">KN</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Karen Ng</h3>
+            <p class="spk-title spk-title--tbd">Speaker</p>
+            <p class="spk-co">HubSpot</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:320ms">
+          <div class="spk-avatar" data-i="3">NW</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Nini Wu</h3>
+            <p class="spk-title spk-title--tbd">Speaker</p>
+            <p class="spk-co">Morgan Stanley</p>
+          </div>
+        </article>
+        <article class="spk" style="--d:360ms">
+          <div class="spk-avatar" data-i="4">HC</div>
+          <div class="spk-body">
+            <h3 class="spk-name">Hue Chiang</h3>
+            <p class="spk-title spk-title--tbd">Speaker</p>
+            <p class="spk-co">DaVita Kidney Care</p>
+          </div>
+        </article>
+    </div>
+  </section>
+
+  <section class="section" id="directory">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Who&rsquo;s in the room</p>
+        <h2>Attendee directory</h2>
+      </div>
+      <p>Search the people joining you. Filter by company and role to find who you want to meet.</p>
+    </div>
+    <div class="dir-panel reveal">
+      <div class="dir-controls">
+        <div class="field">
+          <label for="q">Search</label>
+          <input type="search" id="q" placeholder="Name, company, or role&hellip;" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="fCompany">Company</label>
+          <select id="fCompany"><option value="">All companies</option></select>
+        </div>
+        <div class="field">
+          <label for="fRole">Role</label>
+          <select id="fRole"><option value="">All roles</option></select>
+        </div>
+      </div>
+      <div class="dir-status">
+        <span class="n" id="dirCount"></span>
+        <button class="clear-btn" id="clearBtn" hidden>Clear filters</button>
+      </div>
+      <div class="dir-grid" id="dirGrid"></div>
+      <div class="dir-empty" id="dirEmpty" hidden>No attendees match your search. Try a different term or clear the filters.</div>
+    </div>
+  </section>
+
+  <section class="section" id="sponsors">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Made possible by</p>
+        <h2>Sponsors</h2>
+      </div>
+      <p>Our partner lineup is being finalized and will be announced here soon.</p>
+    </div>
+    <div class="sponsors-inner reveal">
+        <div class="sp-tier">
+          <p class="sp-tier-label">Presenting Partner</p>
+          <div class="sp-grid">
+            <div class="sp-slot"><span>Logo</span></div>
+          </div>
+        </div>
+        <div class="sp-tier">
+          <p class="sp-tier-label">Gold Partners</p>
+          <div class="sp-grid">
+            <div class="sp-slot"><span>Logo</span></div>
+            <div class="sp-slot"><span>Logo</span></div>
+            <div class="sp-slot"><span>Logo</span></div>
+          </div>
+        </div>
+        <div class="sp-tier">
+          <p class="sp-tier-label">Community Partners</p>
+          <div class="sp-grid">
+            <div class="sp-slot"><span>Logo</span></div>
+            <div class="sp-slot"><span>Logo</span></div>
+            <div class="sp-slot"><span>Logo</span></div>
+            <div class="sp-slot"><span>Logo</span></div>
+          </div>
+        </div>
+      <p class="sp-cta">Interested in partnering with the Asian Women Summit? <a href="https://luma.com/cvea199x" target="_blank" rel="noopener">Get in touch &rarr;</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="reveal">
+        <h3>Join us on September 12.</h3>
+        <p>Seats are limited and every ticket is approval-based. Reserve yours before they&rsquo;re gone.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="https://luma.com/cvea199x" target="_blank" rel="noopener">Register on Luma</a>
+        </div>
+      </div>
+      <div class="footer-meta reveal">
+        <div><span class="k">Date</span>Saturday, September 12, 2026 &middot; 9AM&ndash;5PM PT</div>
+        <div><span class="k">Venue</span>Parkview Event Space<br>200 8th Ave N, Seattle, WA 98109</div>
+        <div><span class="k">Host</span>Rise2gether</div>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>&copy; 2026 Asian Women Summit &middot; Hosted by Rise2gether</span>
+      <span>Draft v1 &middot; content in progress</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ATTENDEES = [{"n": "Alice", "c": "Amazon", "r": "SDE"}, {"n": "Allison Pan", "c": "Stackline", "r": "Director"}, {"n": "Amanda", "c": "Samsung", "r": "Business Analyst"}, {"n": "April LaPlante", "c": "J.P. Morgan", "r": "Banker"}, {"n": "Bijun Deng", "c": "Meta", "r": "Product Manager"}, {"n": "Celine", "c": "Forward Deployed AI", "r": "Founder"}, {"n": "Chen Liu", "c": "Meta", "r": "Technical Program Manager"}, {"n": "Claire Fang", "c": "Fullstory", "r": "Chief Product and Technology Officer"}, {"n": "Claire Guan", "c": "Microsoft", "r": "Finance"}, {"n": "Claya Chu", "c": "Microsoft", "r": "Senior IC Sourcing Manager, Azure"}, {"n": "Cloe Zeng", "c": "The Gottman Institute", "r": "Chief Growth Officer"}, {"n": "Connie Zhu", "c": "HCA", "r": "Chief Statistician"}, {"n": "Elaine Lin Hering", "c": "Not the Only", "r": "Founder"}, {"n": "Emelye Wu", "c": "Microsoft", "r": "SDE II"}, {"n": "Emma Wu", "c": "Amazon", "r": "Sr. Manager"}, {"n": "Fangfang Wang", "c": "Ford", "r": "Machine Learning Engineer"}, {"n": "Fiona Fung", "c": "Anthropic", "r": "Member of Technical Staff"}, {"n": "Huanan Li", "c": "Bellevue Dental", "r": "Owner Dentist"}, {"n": "Isla Wang", "c": "Amazon", "r": "SDE"}, {"n": "Jing Xu", "c": "Penn State", "r": "Ph.D. Student"}, {"n": "Joanne Zhu", "c": "HubSpot", "r": "Senior Engineering Manager"}, {"n": "Karen Ng", "c": "Self-Employed", "r": "Founder"}, {"n": "Karlie Chen", "c": "LightFare & Rainbow Bridge", "r": "Founder"}, {"n": "Katherina Shen", "c": "Amazon Web Services", "r": "PM"}, {"n": "Lili Fang", "c": "Lili Fang Design", "r": "Graphic Designer"}, {"n": "Linfang Yang", "c": "Intel", "r": "Engineering Manager"}, {"n": "Liping Qi", "c": "Westeast Link", "r": "CFO Advisory"}, {"n": "Lu", "c": "Google", "r": "Software Engineering Manager"}, {"n": "Mei Wilson", "c": "Meta", "r": "Director of Engineering"}, {"n": "Michelle O'Callahan", "c": "Nuvini", "r": "Chief AI Officer"}, {"n": "Neha A", "c": "Commonwealth Financial Network", "r": "VP, Product Management"}, {"n": "NM", "c": "Muse", "r": "Principal"}, {"n": "Parul Shorey", "c": "HubSpot", "r": "Head of Product Growth"}, {"n": "Peijun Xiao", "c": "Meta", "r": "Research Scientist"}, {"n": "Phoebe Fan", "c": "Foothill Ventures", "r": "Operating Partner"}, {"n": "phoebe Zhu", "c": "Amazon", "r": "Sr. PMT"}, {"n": "Qiaofei Ye", "c": "Salesforce", "r": "Engineering Manager"}, {"n": "Raven l", "c": "Rise2gether", "r": "Video Director"}, {"n": "Shen Pan", "c": "Meta", "r": "Software Engineer"}, {"n": "Shradha Chordiya", "c": "Amazon", "r": "Sr. Supply Chain Manager"}, {"n": "Swin Xu", "c": "Meta", "r": "Director of Product Strategy"}, {"n": "Tanya Chen", "c": "OpenAI", "r": "Member of Technical Staff"}, {"n": "Teresa Chen", "c": "Google", "r": "Sr. Director, Product Management"}, {"n": "Vicky Tian", "c": "Amazon", "r": "Business Intelligence Engineer"}, {"n": "Wennan", "c": "Google", "r": "SDE"}, {"n": "XINQI ZHANG", "c": "OpenAI", "r": "Data Scientist"}, {"n": "Ying Liang", "c": "Microsoft", "r": "Software Engineer"}, {"n": "Yu", "c": "", "r": ""}, {"n": "Yunwei Lanterman", "c": "NBBJ", "r": "Senior Attorney"}, {"n": "Ziying Chen", "c": "Chewy", "r": "PM"}, {"n": "Zoey", "c": "Amazon", "r": "SDE"}];
+
+(function(){
+  // ---- theme ----
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  let stored = null;
+  try { stored = localStorage.getItem('aws-theme'); } catch(e){}
+  if (stored === 'dark' || stored === 'light') root.setAttribute('data-theme', stored);
+  function isDark(){
+    const t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function paintToggle(){ toggle.innerHTML = isDark() ? '&#9788;' : '&#9789;'; }
+  paintToggle();
+  toggle.addEventListener('click', function(){
+    const next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('aws-theme', next); } catch(e){}
+    paintToggle();
+  });
+
+  // ---- reveal ----
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // ---- directory ----
+  const q = document.getElementById('q');
+  const fCompany = document.getElementById('fCompany');
+  const fRole = document.getElementById('fRole');
+  const grid = document.getElementById('dirGrid');
+  const countEl = document.getElementById('dirCount');
+  const emptyEl = document.getElementById('dirEmpty');
+  const clearBtn = document.getElementById('clearBtn');
+
+  function monogram(name){
+    const p = name.replace(/\./g,' ').split(/\s+/).filter(Boolean);
+    if(!p.length) return '?';
+    if(p.length===1) return p[0].slice(0,2).toUpperCase();
+    return (p[0][0]+p[p.length-1][0]).toUpperCase();
+  }
+  function uniqSorted(key){
+    return Array.from(new Set(ATTENDEES.map(a=>a[key]).filter(Boolean))).sort((a,b)=>a.localeCompare(b));
+  }
+  uniqSorted('c').forEach(function(c){ const o=document.createElement('option'); o.value=c; o.textContent=c; fCompany.appendChild(o); });
+  uniqSorted('r').forEach(function(r){ const o=document.createElement('option'); o.value=r; o.textContent=r; fRole.appendChild(o); });
+
+  function esc(s){ return s.replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function hl(text, term){
+    const t = esc(text);
+    if(!term) return t;
+    const i = text.toLowerCase().indexOf(term);
+    if(i<0) return t;
+    return esc(text.slice(0,i))+'<mark>'+esc(text.slice(i,i+term.length))+'</mark>'+esc(text.slice(i+term.length));
+  }
+
+  function render(){
+    const term = q.value.trim().toLowerCase();
+    const co = fCompany.value, ro = fRole.value;
+    const filtered = ATTENDEES.filter(function(a){
+      if(co && a.c!==co) return false;
+      if(ro && a.r!==ro) return false;
+      if(term && !(a.n.toLowerCase().includes(term) || a.c.toLowerCase().includes(term) || a.r.toLowerCase().includes(term))) return false;
+      return true;
+    });
+    grid.innerHTML = filtered.map(function(a){
+      const meta = [a.r ? hl(a.r,term) : '', a.c ? '<b>'+hl(a.c,term)+'</b>' : ''].filter(Boolean).join(' &middot; ');
+      return '<div class="att"><div class="att-mono">'+monogram(a.n)+'</div><div class="att-info">'+
+        '<div class="att-name">'+hl(a.n,term)+'</div>'+
+        (meta ? '<div class="att-meta">'+meta+'</div>' : '')+
+        '</div></div>';
+    }).join('');
+    countEl.textContent = filtered.length + (filtered.length===1?' attendee':' attendees');
+    emptyEl.hidden = filtered.length !== 0;
+    clearBtn.hidden = !(term || co || ro);
+  }
+  [q,fCompany,fRole].forEach(function(el){ el.addEventListener('input', render); });
+  clearBtn.addEventListener('click', function(){ q.value=''; fCompany.value=''; fRole.value=''; render(); q.focus(); });
+  render();
+})();
+</script>
+</body>
+</html>
