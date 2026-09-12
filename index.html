@@ -111,8 +111,12 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
 
 .spk-note{color:var(--muted); font-size:.92rem; margin:-1.4rem 0 2rem}
 .spk-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.1rem}
-.spk{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:1.4rem;
+.spk{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:1.4rem;
   display:flex; flex-direction:column; gap:1rem; transition:transform .2s ease, box-shadow .2s ease}
+.spk-li{position:absolute; top:1rem; right:1rem; width:30px; height:30px; border-radius:8px; display:grid; place-items:center;
+  background:var(--surface-2); color:var(--accent-strong); font-weight:800; font-size:.74rem; font-family:var(--font-body);
+  text-decoration:none; border:1px solid var(--line); transition:background .15s ease, color .15s ease; z-index:2}
+.spk-li:hover{background:var(--accent); color:var(--on-accent); border-color:var(--accent)}
 .spk:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
 .spk-avatar{position:relative; width:64px; height:64px; border-radius:16px; display:grid; place-items:center;
   font-family:var(--font-display); font-weight:900; font-size:1.4rem; color:var(--on-accent)}
@@ -263,7 +267,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-time"><span class="ag-start">9:45</span><span class="ag-end">10:00</span></div>
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
-            <h3 class="ag-title">Keynote</h3>
+            <h3 class="ag-title">Keynote: Own Your Voice to Shape the World</h3>
             <p class="ag-desc">The headline talk to set the tone.</p>
           </div>
         </li>
@@ -271,7 +275,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-time"><span class="ag-start">10:00</span><span class="ag-end">10:45</span></div>
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
-            <h3 class="ag-title">Fireside Chat</h3>
+            <h3 class="ag-title">Fireside Chat: Reimagine the Future in the AI Era</h3>
             <p class="ag-desc">An intimate conversation with a leader in AI.</p>
           </div>
         </li>
@@ -279,7 +283,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-time"><span class="ag-start">10:45</span><span class="ag-end">12:00</span></div>
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
-            <h3 class="ag-title">Panel Discussion</h3>
+            <h3 class="ag-title">Panel Discussion: Reimagine Your Career in the AI Era</h3>
             <p class="ag-desc">Multiple voices on navigating AI, tech, and leadership.</p>
           </div>
         </li>
@@ -329,6 +333,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
     <p class="spk-note reveal">Full bios, headshots, and session assignments are on the way. Here&rsquo;s the confirmed lineup so far.</p>
     <div class="spk-grid reveal">
         <article class="spk" style="--d:0ms">
+          
           <div class="spk-avatar" data-i="0">KX<span class="spk-badge">Host</span></div>
           <div class="spk-body">
             <h3 class="spk-name">Kexin Xu</h3>
@@ -337,6 +342,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:40ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/elainelinhering" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Elaine Lin Hering">in</a>
           <div class="spk-avatar" data-i="1">EH</div>
           <div class="spk-body">
             <h3 class="spk-name">Elaine Lin Hering</h3>
@@ -345,6 +351,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:80ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/fionafung" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Fiona Fung">in</a>
           <div class="spk-avatar" data-i="2">FF</div>
           <div class="spk-body">
             <h3 class="spk-name">Fiona Fung</h3>
@@ -353,6 +360,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:120ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/tanyach" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Tanya Chen">in</a>
           <div class="spk-avatar" data-i="3">TC</div>
           <div class="spk-body">
             <h3 class="spk-name">Tanya Chen</h3>
@@ -361,6 +369,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:160ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/teresa-chen-b3735a3" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Teresa Chen">in</a>
           <div class="spk-avatar" data-i="4">TC</div>
           <div class="spk-body">
             <h3 class="spk-name">Teresa Chen</h3>
@@ -369,6 +378,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:200ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/meiwilson" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Mei Wilson">in</a>
           <div class="spk-avatar" data-i="0">MW</div>
           <div class="spk-body">
             <h3 class="spk-name">Mei Wilson</h3>
@@ -377,6 +387,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:240ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/clfang" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Claire Fang">in</a>
           <div class="spk-avatar" data-i="1">CF</div>
           <div class="spk-body">
             <h3 class="spk-name">Claire Fang</h3>
@@ -385,6 +396,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:280ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/karenng2" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Karen Ng">in</a>
           <div class="spk-avatar" data-i="2">KN</div>
           <div class="spk-body">
             <h3 class="spk-name">Karen Ng</h3>
@@ -393,6 +405,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:320ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/niniwu" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Nini Wu">in</a>
           <div class="spk-avatar" data-i="3">NW</div>
           <div class="spk-body">
             <h3 class="spk-name">Nini Wu</h3>
@@ -401,6 +414,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </article>
         <article class="spk" style="--d:360ms">
+          <a class="spk-li" href="https://www.linkedin.com/in/hue-chiang-11b9146" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of Hue Chiang">in</a>
           <div class="spk-avatar" data-i="4">HC</div>
           <div class="spk-body">
             <h3 class="spk-name">Hue Chiang</h3>
