@@ -411,42 +411,6 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
     </div>
   </section>
 
-  <section class="section" id="directory">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">Who&rsquo;s in the room</p>
-        <h2>Attendee directory</h2>
-      </div>
-      <p>Search the people joining you. Filter by company, role, or ticket, and tap the <b>in</b> badge to open a LinkedIn profile.</p>
-    </div>
-    <div class="dir-panel reveal">
-      <div class="dir-controls">
-        <div class="field field--search">
-          <label for="q">Search</label>
-          <input type="search" id="q" placeholder="Name, company, or role&hellip;" autocomplete="off">
-        </div>
-        <div class="field">
-          <label for="fCompany">Company</label>
-          <select id="fCompany"><option value="">All companies</option></select>
-        </div>
-        <div class="field">
-          <label for="fRole">Role</label>
-          <select id="fRole"><option value="">All roles</option></select>
-        </div>
-        <div class="field">
-          <label for="fTicket">Ticket</label>
-          <select id="fTicket"><option value="">All tickets</option></select>
-        </div>
-      </div>
-      <div class="dir-status">
-        <span class="n" id="dirCount"></span>
-        <button class="clear-btn" id="clearBtn" hidden>Clear filters</button>
-      </div>
-      <div class="dir-grid" id="dirGrid"></div>
-      <div class="dir-empty" id="dirEmpty" hidden>No attendees match your search. Try a different term or clear the filters.</div>
-    </div>
-  </section>
-
   <section class="section" id="sponsors">
     <div class="section-head reveal">
       <div>
@@ -478,6 +442,42 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           </div>
         </div>
       <p class="sp-cta">Interested in partnering with the Asian Women Summit? <a href="https://luma.com/cvea199x" target="_blank" rel="noopener">Get in touch &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="directory">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Who&rsquo;s in the room</p>
+        <h2>Attendee directory</h2>
+      </div>
+      <p>Search the people joining you. Filter by company, role, or ticket, and tap the <b>in</b> badge to open a LinkedIn profile.</p>
+    </div>
+    <div class="dir-panel">
+      <div class="dir-controls">
+        <div class="field field--search">
+          <label for="q">Search</label>
+          <input type="search" id="q" placeholder="Name, company, or role&hellip;" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="fCompany">Company</label>
+          <select id="fCompany"><option value="">All companies</option></select>
+        </div>
+        <div class="field">
+          <label for="fRole">Role</label>
+          <select id="fRole"><option value="">All roles</option></select>
+        </div>
+        <div class="field">
+          <label for="fTicket">Ticket</label>
+          <select id="fTicket"><option value="">All tickets</option></select>
+        </div>
+      </div>
+      <div class="dir-status">
+        <span class="n" id="dirCount"></span>
+        <button class="clear-btn" id="clearBtn" hidden>Clear filters</button>
+      </div>
+      <div class="dir-grid" id="dirGrid"></div>
+      <div class="dir-empty" id="dirEmpty" hidden>No attendees match your search. Try a different term or clear the filters.</div>
     </div>
   </section>
 </main>
@@ -524,10 +524,15 @@ const ATTENDEES = [{"n": "Aaron Xu", "c": "Amazon", "r": "SDE", "l": "https://li
     paintToggle();
   });
 
-  const io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  const reveals = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
 
   const q = document.getElementById('q');
   const fCompany = document.getElementById('fCompany');
