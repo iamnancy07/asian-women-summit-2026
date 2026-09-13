@@ -92,6 +92,14 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
 .hero-tile::after{content:"\2192"; position:absolute; top:1.2rem; right:1.3rem; color:var(--accent-strong);
   opacity:0; transform:translateX(-4px); transition:opacity .18s ease, transform .18s ease; font-weight:700}
 .hero-tile:hover::after{opacity:1; transform:none}
+.gift-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1rem}
+.gift-card{display:flex; flex-direction:column; gap:.35rem; padding:1.4rem; border-radius:16px;
+  border:1px solid var(--line); background:var(--surface); text-decoration:none; color:var(--ink);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+.gift-card:hover{transform:translateY(-3px); border-color:var(--accent); box-shadow:0 14px 30px -16px var(--accent)}
+.gift-card:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.gift-name{font-family:var(--font-display); font-weight:600; font-size:1.28rem; letter-spacing:-.01em}
+.gift-link{font-size:.85rem; font-weight:600; color:var(--accent-strong)}
 
 .section{padding:5rem 0}
 .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem}
@@ -233,6 +241,34 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
         <a class="hero-tile" href="#directory"><span class="ht-l">Attendees</span><span class="ht-d">Who&rsquo;s in the room</span></a>
         <a class="hero-tile" href="#sponsors"><span class="ht-l">Sponsors</span><span class="ht-d">Our partners</span></a>
       </nav>
+    </div>
+  </section>
+
+  <section class="section" id="gifts">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">In our VIP gift bags</p>
+        <h2>Thank you, women-owned businesses</h2>
+      </div>
+      <p>With gratitude to the Asian women founders who shared their products with our VIP guests.</p>
+    </div>
+    <div class="gift-grid reveal">
+        <a class="gift-card" href="https://www.rhymearoma.com" target="_blank" rel="noopener">
+          <span class="gift-name">Rhyme Aroma</span>
+          <span class="gift-link">rhymearoma.com &rarr;</span>
+        </a>
+        <a class="gift-card" href="https://crunchybuddy.com" target="_blank" rel="noopener">
+          <span class="gift-name">Crunchy Buddy</span>
+          <span class="gift-link">crunchybuddy.com &rarr;</span>
+        </a>
+        <a class="gift-card" href="https://teafairyus.com/" target="_blank" rel="noopener">
+          <span class="gift-name">Tea Fairy</span>
+          <span class="gift-link">teafairyus.com &rarr;</span>
+        </a>
+        <a class="gift-card" href="https://xingyujiatelier.com/" target="_blank" rel="noopener">
+          <span class="gift-name">Xingyuji Atelier</span>
+          <span class="gift-link">xingyujiatelier.com &rarr;</span>
+        </a>
     </div>
   </section>
 
