@@ -65,7 +65,7 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
 @media (max-width:760px){.nav-links{display:none}}
 
 .hero{padding:5.5rem 0 4rem; position:relative; overflow:hidden}
-.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:2.5rem; align-items:center}
+.hero-grid{display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
 .hero h1{font-size:clamp(2.9rem,7vw,5.6rem); letter-spacing:-.02em; margin:.5rem 0 0}
 .hero h1 em{font-style:italic; font-weight:500; color:var(--accent)}
@@ -92,6 +92,8 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
   background:radial-gradient(circle at 30% 30%, color-mix(in srgb,var(--accent) 26%, transparent), transparent 62%);
   filter:blur(6px); pointer-events:none; z-index:-1}
 .hero-nav{display:grid; grid-template-columns:1fr 1fr; gap:.9rem}
+.explore-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:.9rem}
+@media (max-width:760px){.explore-grid{grid-template-columns:1fr 1fr}}
 .hero-tile{position:relative; display:flex; flex-direction:column; gap:.25rem; padding:1.35rem 1.4rem; border-radius:16px;
   border:1px solid var(--line); background:var(--surface); text-decoration:none; color:var(--ink);
   transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
@@ -249,12 +251,6 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
         <h1>Asian Women <em>Summit</em> 2026</h1>
         <p class="hero-lead">Seattle &middot; September 12, 2026 &mdash; a day of Asian women owning their voices in the AI era.</p>
       </div>
-      <nav class="hero-nav" aria-label="Explore the summit">
-        <a class="hero-tile" href="#agenda"><span class="ht-l">Agenda</span><span class="ht-d">The full day</span></a>
-        <a class="hero-tile" href="#speakers"><span class="ht-l">Speakers</span><span class="ht-d">Who&rsquo;s on stage</span></a>
-        <a class="hero-tile" href="#directory"><span class="ht-l">Attendees</span><span class="ht-d">Who&rsquo;s in the room</span></a>
-        <a class="hero-tile" href="#sponsors"><span class="ht-l">Sponsors</span><span class="ht-d">Our partners</span></a>
-      </nav>
     </div>
   </section>
 
@@ -304,6 +300,15 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <span class="gift-link">xingyujiatelier.com &rarr;</span>
         </a>
     </div>
+  </section>
+
+  <section class="section" id="explore">
+    <nav class="explore-grid reveal" aria-label="Explore the summit">
+      <a class="hero-tile" href="#agenda"><span class="ht-l">Agenda</span><span class="ht-d">The full day</span></a>
+      <a class="hero-tile" href="#speakers"><span class="ht-l">Speakers</span><span class="ht-d">Who&rsquo;s on stage</span></a>
+      <a class="hero-tile" href="#directory"><span class="ht-l">Attendees</span><span class="ht-d">Who&rsquo;s in the room</span></a>
+      <a class="hero-tile" href="#sponsors"><span class="ht-l">Sponsors</span><span class="ht-d">Our partners</span></a>
+    </nav>
   </section>
 
   <section class="section" id="agenda">
