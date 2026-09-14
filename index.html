@@ -73,6 +73,7 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
 .hero-credit{margin:1.1rem 0 0; max-width:44ch; font-size:.9rem; color:var(--muted)}
 .hero-credit a{color:var(--accent-strong); font-weight:600; text-decoration:underline; text-underline-offset:2px}
 .letter{max-width:64ch; margin:0 auto}
+.letter-kicker{font-size:.85rem; letter-spacing:.02em; color:var(--muted); font-weight:600; margin:0 0 .9rem}
 .letter h2{font-size:clamp(1.9rem,4vw,2.9rem); letter-spacing:-.015em; margin:.5rem 0 1.5rem}
 .letter p{margin:0 0 1.1rem; font-size:1.06rem; line-height:1.75}
 .letter-quote{margin:1.7rem 0; padding:.4rem 0 .4rem 1.6rem; border:0; border-left:3px solid var(--accent);
@@ -229,40 +230,23 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
 </style>
 </head>
 <body>
-<header class="nav" id="top">
-  <a class="brand" href="#top">Asian&nbsp;Women&nbsp;Summit <span>&rsquo;26</span></a>
-  <nav class="nav-links">
-    <a href="#agenda">Agenda</a>
-    <a href="#speakers">Speakers</a>
-    <a href="#sponsors">Sponsors</a>
-    <a href="#directory">Attendees</a>
-  </nav>
-  <div class="nav-actions">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">&#9789;</button>
-  </div>
-</header>
-
 <main class="wrap">
-  <section class="hero reveal">
-    <div class="hero-orn" aria-hidden="true"></div>
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Thank you for joining us</p>
-        <h1>Asian Women <em>Summit</em> 2026</h1>
-        <p class="hero-lead">Seattle &middot; September 12, 2026 &mdash; a day of Asian women owning their voices in the AI era.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="thankyou">
+  <section class="section" id="gratitude">
     <div class="letter reveal">
+      <p class="letter-kicker">Asian Women Summit 2026 &middot; Seattle &middot; September 12, 2026</p>
       <p class="eyebrow">A note of gratitude</p>
       <h2>Thank you for an incredible Asian Women Summit</h2>
       <p>To our speakers, volunteers, sponsors, community leaders, partners, and every attendee who spent the day with us&mdash;thank you.</p>
       <p>We hope you left the Summit feeling energized, inspired, and connected&mdash;not only by the incredible speakers on stage, but also by the conversations, ideas, and new connections you made throughout the day.</p>
       <p>If there is one message we hope stays with you, it is this:</p>
       <blockquote class="letter-quote">You don&rsquo;t have to wait until you feel ready to start. Your voice matters&mdash;use it, own it, and speak up.</blockquote>
-      <h3 class="letter-sub">Relive the day. Stay connected. Amplify our voices.</h3>
+    </div>
+  </section>
+
+  <section class="section" id="amplify">
+    <div class="letter reveal">
+      <p class="eyebrow">After the Summit</p>
+      <h2>Relive the day. Stay connected. Amplify our voices.</h2>
       <p>The Summit may be over, but the conversations and connections don&rsquo;t have to end here. Find yourself in the photos, reconnect with the people you met, and share your favorite moments and takeaways from the Summit.</p>
       <p>When you post, tag RISE2GETHER so we can celebrate and amplify your stories. Together, we can help more Asian women see what&rsquo;s possible when we own our voices, support one another, and take action&mdash;even before we feel ready.</p>
       <div class="hero-cta">
@@ -628,14 +612,16 @@ const ATTENDEES = [{"n": "Aaron Xu", "c": "Amazon", "r": "SDE", "l": "https://li
     if (t) return t === 'dark';
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
-  function paintToggle(){ toggle.innerHTML = isDark() ? '&#9788;' : '&#9789;'; }
-  paintToggle();
-  toggle.addEventListener('click', function(){
-    const next = isDark() ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('aws-theme', next); } catch(e){}
+  if (toggle) {
+    const paintToggle = function(){ toggle.innerHTML = isDark() ? '&#9788;' : '&#9789;'; };
     paintToggle();
-  });
+    toggle.addEventListener('click', function(){
+      const next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('aws-theme', next); } catch(e){}
+      paintToggle();
+    });
+  }
 
   const reveals = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
