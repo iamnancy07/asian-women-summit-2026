@@ -72,6 +72,16 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
 .hero-lead{margin:1.5rem 0 0; max-width:34ch; font-size:1.12rem; color:var(--muted)}
 .hero-credit{margin:1.1rem 0 0; max-width:44ch; font-size:.9rem; color:var(--muted)}
 .hero-credit a{color:var(--accent-strong); font-weight:600; text-decoration:underline; text-underline-offset:2px}
+.letter{max-width:64ch; margin:0 auto}
+.letter h2{font-size:clamp(1.9rem,4vw,2.9rem); letter-spacing:-.015em; margin:.5rem 0 1.5rem}
+.letter p{margin:0 0 1.1rem; font-size:1.06rem; line-height:1.75}
+.letter-quote{margin:1.7rem 0; padding:.4rem 0 .4rem 1.6rem; border:0; border-left:3px solid var(--accent);
+  font-family:var(--font-display); font-style:italic; font-weight:500; font-size:clamp(1.35rem,2.6vw,1.7rem); line-height:1.35; color:var(--ink)}
+.letter-sub{font-family:var(--font-display); font-size:clamp(1.4rem,2.6vw,1.7rem); font-weight:600; margin:2.2rem 0 1.2rem; color:var(--accent-strong)}
+.letter-credit{font-size:.92rem; color:var(--muted)}
+.letter-credit a{color:var(--accent-strong); font-weight:600; text-decoration:underline; text-underline-offset:2px}
+.letter-closing{font-family:var(--font-display); font-style:italic; font-size:clamp(1.3rem,2.4vw,1.6rem); color:var(--accent-strong); margin-top:1.6rem}
+.letter .hero-cta{margin:1.7rem 0 1.4rem}
 .hero-cta{display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2rem}
 .hero-meta{display:flex; flex-direction:column; gap:1rem; padding-bottom:.5rem}
 .meta-card{border:1px solid var(--line); background:var(--surface); border-radius:16px; padding:1.1rem 1.25rem}
@@ -237,11 +247,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
       <div>
         <p class="eyebrow">Thank you for joining us</p>
         <h1>Asian Women <em>Summit</em> 2026</h1>
-        <p class="hero-lead">Thank you to everyone who gathered in Seattle on September 12. Now let&rsquo;s amplify our voices &mdash; grab your photos from the day, share them on social, and tag Rise2gether so more Asian women can see what&rsquo;s possible.</p>
-        <div class="hero-cta">
-          <a class="btn btn-accent" href="https://drive.google.com/drive/folders/17chy_FbDHqIVuzvT2F1LnLyPwVJ-3tB1" target="_blank" rel="noopener">Download &amp; share summit photos</a>
-        </div>
-        <p class="hero-credit">A special thank you to the <a href="https://asianphotoassociation.com/en" target="_blank" rel="noopener">Asian Photography Association</a> &mdash; founded by an Asian woman &mdash; for capturing the day.</p>
+        <p class="hero-lead">Seattle &middot; September 12, 2026 &mdash; a day of Asian women owning their voices in the AI era.</p>
       </div>
       <nav class="hero-nav" aria-label="Explore the summit">
         <a class="hero-tile" href="#agenda"><span class="ht-l">Agenda</span><span class="ht-d">The full day</span></a>
@@ -249,6 +255,26 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
         <a class="hero-tile" href="#directory"><span class="ht-l">Attendees</span><span class="ht-d">Who&rsquo;s in the room</span></a>
         <a class="hero-tile" href="#sponsors"><span class="ht-l">Sponsors</span><span class="ht-d">Our partners</span></a>
       </nav>
+    </div>
+  </section>
+
+  <section class="section" id="thankyou">
+    <div class="letter reveal">
+      <p class="eyebrow">A note of gratitude</p>
+      <h2>Thank you for an incredible Asian Women Summit</h2>
+      <p>To our speakers, volunteers, sponsors, community leaders, partners, and every attendee who spent the day with us&mdash;thank you.</p>
+      <p>We hope you left the Summit feeling energized, inspired, and connected&mdash;not only by the incredible speakers on stage, but also by the conversations, ideas, and new connections you made throughout the day.</p>
+      <p>If there is one message we hope stays with you, it is this:</p>
+      <blockquote class="letter-quote">You don&rsquo;t have to wait until you feel ready to start. Your voice matters&mdash;use it, own it, and speak up.</blockquote>
+      <h3 class="letter-sub">Relive the day. Stay connected. Amplify our voices.</h3>
+      <p>The Summit may be over, but the conversations and connections don&rsquo;t have to end here. Find yourself in the photos, reconnect with the people you met, and share your favorite moments and takeaways from the Summit.</p>
+      <p>When you post, tag RISE2GETHER so we can celebrate and amplify your stories. Together, we can help more Asian women see what&rsquo;s possible when we own our voices, support one another, and take action&mdash;even before we feel ready.</p>
+      <div class="hero-cta">
+        <a class="btn btn-accent" href="https://drive.google.com/drive/folders/17chy_FbDHqIVuzvT2F1LnLyPwVJ-3tB1" target="_blank" rel="noopener">Download &amp; share summit photos</a>
+      </div>
+      <p class="letter-credit">A special thank you to the <a href="https://asianphotoassociation.com/en" target="_blank" rel="noopener">Asian Photography Association</a>&mdash;founded by an Asian woman&mdash;for capturing the day.</p>
+      <p>Thank you for being part of this community and for making the 2026 Asian Women Summit such a special day.</p>
+      <p class="letter-closing">Let&rsquo;s keep rising, together.</p>
     </div>
   </section>
 
