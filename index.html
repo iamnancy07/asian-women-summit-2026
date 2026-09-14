@@ -124,9 +124,9 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
 .spk{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:1.4rem;
   display:flex; flex-direction:column; gap:1rem; transition:transform .2s ease, box-shadow .2s ease}
 .spk-li{position:absolute; top:1rem; right:1rem; width:30px; height:30px; border-radius:8px; display:grid; place-items:center;
-  background:var(--surface-2); color:var(--accent-strong); font-weight:800; font-size:.74rem; font-family:var(--font-body);
-  text-decoration:none; border:1px solid var(--line); transition:background .15s ease, color .15s ease; z-index:2}
-.spk-li:hover{background:var(--accent); color:var(--on-accent); border-color:var(--accent)}
+  background:#0A66C2; color:#fff; font-weight:800; font-size:.74rem; font-family:var(--font-body);
+  text-decoration:none; border:1px solid #0A66C2; transition:background .15s ease, color .15s ease; z-index:2}
+.spk-li:hover{background:#004182; color:#fff; border-color:#004182}
 .spk:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
 .spk-avatar{position:relative; width:64px; height:64px; border-radius:16px; display:grid; place-items:center;
   font-family:var(--font-display); font-weight:900; font-size:1.4rem; color:var(--on-accent)}
@@ -172,11 +172,19 @@ h1,h2,h3{margin:0; font-family:var(--font-display); font-weight:600; text-wrap:b
   text-transform:uppercase; color:var(--deep); background:var(--surface-2); border:1px solid var(--line);
   padding:.22em .6em; border-radius:999px}
 .att-li{flex:0 0 auto; width:28px; height:28px; border-radius:8px; display:grid; place-items:center;
-  background:var(--surface-2); color:var(--accent-strong); font-weight:800; font-size:.72rem; font-family:var(--font-body);
-  text-decoration:none; border:1px solid var(--line); transition:background .15s, color .15s}
-.att-li:hover{background:var(--accent); color:var(--on-accent); border-color:var(--accent)}
+  background:#0A66C2; color:#fff; font-weight:800; font-size:.72rem; font-family:var(--font-body);
+  text-decoration:none; border:1px solid #0A66C2; transition:background .15s, color .15s}
+.att-li:hover{background:#004182; color:#fff; border-color:#004182}
 .dir-empty{text-align:center; padding:2.5rem 1rem; color:var(--muted)}
 .dir-empty[hidden]{display:none}
+.dir-pager{display:flex; align-items:center; justify-content:center; gap:1rem; margin-top:1.5rem}
+.dir-pager[hidden]{display:none}
+.pager-btn{padding:.5em 1.1em; border-radius:999px; border:1px solid var(--line); background:var(--surface);
+  color:var(--ink); font-family:var(--font-body); font-weight:600; font-size:.9rem; cursor:pointer;
+  transition:border-color .15s, color .15s}
+.pager-btn:hover:not(:disabled){border-color:var(--accent); color:var(--accent-strong)}
+.pager-btn:disabled{opacity:.4; cursor:default}
+.pager-info{font-size:.9rem; color:var(--muted); font-weight:600; min-width:8ch; text-align:center}
 mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; border-radius:3px; padding:0 .1em}
 
 .sponsors-inner{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:2.2rem}
@@ -214,8 +222,8 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
   <nav class="nav-links">
     <a href="#agenda">Agenda</a>
     <a href="#speakers">Speakers</a>
-    <a href="#directory">Directory</a>
     <a href="#sponsors">Sponsors</a>
+    <a href="#directory">Attendees</a>
   </nav>
   <div class="nav-actions">
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">&#9789;</button>
@@ -278,7 +286,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
         <p class="eyebrow">The day</p>
         <h2>Agenda</h2>
       </div>
-      <p>A full day, from first coffee to closing reflections. Session details firming up as we approach September.</p>
+      <p>A full day event, from inspiring fireside chat and panel discussion to interactive workshops.</p>
     </div>
     <ol class="agenda reveal">
         <li class="ag-item">
@@ -286,7 +294,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Registration &amp; Networking</h3>
-            <p class="ag-desc">Doors open. Coffee, name tags, and first hellos.</p>
+            <p class="ag-desc"></p>
           </div>
         </li>
         <li class="ag-item">
@@ -294,7 +302,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Opening Remarks</h3>
-            <p class="ag-desc">Welcome and the vision for the day.</p>
+            <p class="ag-desc">Kexin Xu</p>
           </div>
         </li>
         <li class="ag-item">
@@ -302,7 +310,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Sponsor Welcome</h3>
-            <p class="ag-desc">A word from the partners making this possible.</p>
+            <p class="ag-desc">Nini Wu</p>
           </div>
         </li>
         <li class="ag-item">
@@ -310,7 +318,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Keynote: Own Your Voice to Shape the World</h3>
-            <p class="ag-desc">The headline talk to set the tone.</p>
+            <p class="ag-desc">Elaine Lin Hering</p>
           </div>
         </li>
         <li class="ag-item">
@@ -318,7 +326,7 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Fireside Chat: Reimagine the Future in the AI Era</h3>
-            <p class="ag-desc">An intimate conversation with a leader in AI.</p>
+            <p class="ag-desc">Karen Ng, Fiona Fung</p>
           </div>
         </li>
         <li class="ag-item">
@@ -326,23 +334,31 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Panel Discussion: Reimagine Your Career in the AI Era</h3>
-            <p class="ag-desc">Multiple voices on navigating AI, tech, and leadership.</p>
+            <p class="ag-desc">Teresa Chen, Hue Chiang, Tanya Chen, Mei Wilson, Claire Fang</p>
           </div>
         </li>
         <li class="ag-item">
-          <div class="ag-time"><span class="ag-start">12:00</span><span class="ag-end">1:30</span></div>
+          <div class="ag-time"><span class="ag-start">12:00</span><span class="ag-end">1:00</span></div>
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Lunch &amp; Networking</h3>
-            <p class="ag-desc">Break bread and build your Seattle network.</p>
+            <p class="ag-desc"></p>
+          </div>
+        </li>
+        <li class="ag-item">
+          <div class="ag-time"><span class="ag-start">1:00</span><span class="ag-end">1:30</span></div>
+          <div class="ag-dot" aria-hidden="true"></div>
+          <div class="ag-content">
+            <h3 class="ag-title">Book Signing with Elaine &amp; Cake Celebration</h3>
+            <p class="ag-desc"></p>
           </div>
         </li>
         <li class="ag-item">
           <div class="ag-time"><span class="ag-start">1:30</span><span class="ag-end">2:30</span></div>
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
-            <h3 class="ag-title">Interactive Workshop</h3>
-            <p class="ag-desc">Hands-on with the tools shaping the field.</p>
+            <h3 class="ag-title">Workshop: Honing Your Voice</h3>
+            <p class="ag-desc">Elaine Lin Hering</p>
           </div>
         </li>
         <li class="ag-item">
@@ -350,15 +366,15 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
             <h3 class="ag-title">Roundtables &amp; AI Sessions</h3>
-            <p class="ag-desc">Small-group deep dives on the topics that matter to you.</p>
+            <p class="ag-desc">Phoebe Wang, Kexin Xu</p>
           </div>
         </li>
         <li class="ag-item">
           <div class="ag-time"><span class="ag-start">4:00</span><span class="ag-end">5:00</span></div>
           <div class="ag-dot" aria-hidden="true"></div>
           <div class="ag-content">
-            <h3 class="ag-title">Closing Remarks</h3>
-            <p class="ag-desc">Reflections, thank-yous, and where we go next.</p>
+            <h3 class="ag-title">Closing Remarks &amp; Networking</h3>
+            <p class="ag-desc">Kexin Xu</p>
           </div>
         </li>
     </ol>
@@ -534,6 +550,11 @@ mark{background:color-mix(in srgb,var(--gold) 45%, transparent); color:inherit; 
       </div>
       <div class="dir-grid" id="dirGrid"></div>
       <div class="dir-empty" id="dirEmpty" hidden>No attendees match your search. Try a different term or clear the filters.</div>
+      <nav class="dir-pager" id="dirPager" aria-label="Attendee directory pages" hidden>
+        <button class="pager-btn" id="pagerPrev" type="button">&larr; Prev</button>
+        <span class="pager-info" id="pagerInfo"></span>
+        <button class="pager-btn" id="pagerNext" type="button">Next &rarr;</button>
+      </nav>
     </div>
   </section>
 </main>
@@ -603,6 +624,12 @@ const ATTENDEES = [{"n": "Aaron Xu", "c": "Amazon", "r": "SDE", "l": "https://li
   const countEl = document.getElementById('dirCount');
   const emptyEl = document.getElementById('dirEmpty');
   const clearBtn = document.getElementById('clearBtn');
+  const pager = document.getElementById('dirPager');
+  const pagerPrev = document.getElementById('pagerPrev');
+  const pagerNext = document.getElementById('pagerNext');
+  const pagerInfo = document.getElementById('pagerInfo');
+  const PAGE_SIZE = 8;
+  let page = 1;
 
   function monogram(name){
     const p = name.replace(/[.,@]/g,' ').split(/\s+/).filter(Boolean);
@@ -642,7 +669,12 @@ const ATTENDEES = [{"n": "Aaron Xu", "c": "Amazon", "r": "SDE", "l": "https://li
       if(term && !(a.n.toLowerCase().includes(term) || (a.c||'').toLowerCase().includes(term) || (a.r||'').toLowerCase().includes(term))) return false;
       return true;
     });
-    grid.innerHTML = filtered.map(function(a){
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if(page > totalPages) page = totalPages;
+    if(page < 1) page = 1;
+    const start = (page-1)*PAGE_SIZE;
+    const pageItems = filtered.slice(start, start+PAGE_SIZE);
+    grid.innerHTML = pageItems.map(function(a){
       const meta = [a.r ? hl(a.r,term) : '', a.c ? '<b>'+hl(a.c,term)+'</b>' : ''].filter(Boolean).join(' &middot; ');
       const link = normLink(a.l);
       const li = link ? '<a class="att-li" href="'+attr(link)+'" target="_blank" rel="noopener nofollow" aria-label="LinkedIn profile of '+attr(a.n)+'">in</a>' : '';
@@ -656,9 +688,15 @@ const ATTENDEES = [{"n": "Aaron Xu", "c": "Amazon", "r": "SDE", "l": "https://li
     countEl.textContent = filtered.length + (filtered.length===1?' attendee':' attendees');
     emptyEl.hidden = filtered.length !== 0;
     clearBtn.hidden = !(term || co || ro || ti);
+    pager.hidden = filtered.length <= PAGE_SIZE;
+    pagerInfo.textContent = 'Page '+page+' of '+totalPages;
+    pagerPrev.disabled = page <= 1;
+    pagerNext.disabled = page >= totalPages;
   }
-  [q,fCompany,fRole,fTicket].forEach(function(el){ el.addEventListener('input', render); });
-  clearBtn.addEventListener('click', function(){ q.value=''; fCompany.value=''; fRole.value=''; fTicket.value=''; render(); q.focus(); });
+  [q,fCompany,fRole,fTicket].forEach(function(el){ el.addEventListener('input', function(){ page=1; render(); }); });
+  clearBtn.addEventListener('click', function(){ q.value=''; fCompany.value=''; fRole.value=''; fTicket.value=''; page=1; render(); q.focus(); });
+  pagerPrev.addEventListener('click', function(){ if(page>1){ page--; render(); grid.scrollIntoView({behavior:'smooth', block:'start'}); } });
+  pagerNext.addEventListener('click', function(){ page++; render(); grid.scrollIntoView({behavior:'smooth', block:'start'}); });
   render();
 })();
 </script>
